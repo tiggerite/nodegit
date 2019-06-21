@@ -28,7 +28,7 @@
   "main": "dist/nodegit.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nodegit/nodegit.git"
+    "url": "git://github.com/tiggerite/nodegit.git"
   },
   "directories": {
     "build": "./build",
@@ -71,7 +71,7 @@
   "binary": {
     "module_name": "nodegit",
     "module_path": "./build/Release/",
-    "host": "https://axonodegit.s3.amazonaws.com/nodegit/nodegit/"
+    "host": "https://github.com/tiggerite/nodegit/nodegit/"
   },
   "scripts": {
     "babel": "babel --presets es2015 -d ./dist ./lib",
