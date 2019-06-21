@@ -15,8 +15,9 @@ RUN apk add --no-cache \
 FROM nodegit-base as nodegit-build
 RUN apk add --no-cache python tzdata build-base && \
     BUILD_ONLY=true npm install --no-save --no-package-lock --production nodegit@0.24.3 && \
-    mkdir -p ./nodegit-build/Release/obj.target && \
-    cp ./node_modules/nodegit/build/Release/*.node ./nodegit-build/Release && \
-    cp ./node_modules/nodegit/build/Release/obj.target/*.node ./nodegit-build/Release/obj.target && \
+    mkdir -p ./nodegit-build/Release/obj.target ./nodegit-dist && \
+    cp -R ./node_modules/nodegit/build/Release/*.node ./nodegit-build/Release && \
+    cp -R ./node_modules/nodegit/build/Release/obj.target/*.node ./nodegit-build/Release/obj.target && \
+    cp -R ./node_modules/nodegit/dist/* ./nodegit-dist && \
     rm -rf ./node_modules && \
     apk del python tzdata build-base
